@@ -1,0 +1,18 @@
+== ABOUT ==
+TaskMailer is a small ruby application designed to email you status updates 
+based on your TaskWarrior to-do lists.  
+
+TaskWarrior is a "command-line todo list manager."  It's a great application 
+for organizing and prioritizing tasks. Learn more about it by visiting 
+http://taskwarrior.org
+
+== SETUP ==
+TaskMailer requires (obviously) TaskWarrior to be installed and running on your
+system.  Please visit http://taskwarrior.org for information on how to set up 
+and configure an instance of TaskWarrior.
+
+Additionally, TaskMailer requires the Ruote ruby workflow engine (OpenFEru) in
+order to schedule email dispatch times.  To set up Ruote, gem install ruote or
+visit http://openwferu.rubyforge.org/quickstart.html for more information.
+
+
