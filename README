@@ -6,13 +6,21 @@ TaskWarrior is a "command-line todo list manager."  It's a great application
 for organizing and prioritizing tasks. Learn more about it by visiting 
 http://taskwarrior.org
 
-== SETUP ==
+== PREREQUISITES ==
 TaskMailer requires (obviously) TaskWarrior to be installed and running on your
 system.  Please visit http://taskwarrior.org for information on how to set up 
 and configure an instance of TaskWarrior.
+
+In order to send out emails, TaskMailer requires Pony.  gem install pony or
+visit https://github.com/benprew/pony for more information.
 
 Additionally, TaskMailer requires the Ruote ruby workflow engine (OpenFEru) in
 order to schedule email dispatch times.  To set up Ruote, gem install ruote or
 visit http://openwferu.rubyforge.org/quickstart.html for more information.
 
+Finally, TaskMailer uses Psych to read YAML configuration files.
+gem install psych will install Psych, though it may require the libyaml-dev 
+library to be installed on your system.
+
+== SETUP ==
 
