@@ -4,7 +4,8 @@ require 'psych'
 class TaskMailer
 
   Basedir = File.expand_path("#{File.dirname(__FILE__)}/..")
-  JOBS    = Psych.load_file("#{Basedir}/config/jobs.yaml") unless defined? JOBS 
+  JOBS    = Psych.load_file("#{Basedir}/config/jobs.yaml") unless defined? JOBS
+  SMTP    = Psych.load_file("#{Basedir}/config/smtp.yaml") unless defined? SMTP
 
   ##
   # main
@@ -37,7 +38,16 @@ class TaskMailer
       :from => job_data[:from],
       :subject => job_data[:subject], 
       :body => body,
-      :via => :sendmail
+      :via => :smtp,
+      :via_options => {
+        :address              => SMTP[:address],
+        :port                 => SMTP[:port],
+        :enable_starttls_auto => SMTP[:enable_starttls_auto],
+        :user_name            => SMTP[:user_name],
+        :password             => SMTP[:password],
+        :authentication       => SMTP[:authentication],
+        :domain               => SMTP[:domain]
+      }
     )
   end
 
