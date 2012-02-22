@@ -1,9 +1,8 @@
 :job1:
-    :email:   andrew.j.pierce@gmail.com
-    :from:    taskmailer@ajpierce.local
+    :email:   your.email.address@email.com
+    :from:    taskmailer@localhost
     :subject: Daily Taskwarrior Status
     :projects:
       - Home
       - Work
       - Shopping
-    :cron:    '* * * * *'

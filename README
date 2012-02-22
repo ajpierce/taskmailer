@@ -14,9 +14,8 @@ and configure an instance of TaskWarrior.
 In order to send out emails, TaskMailer requires Pony.  gem install pony or
 visit https://github.com/benprew/pony for more information.
 
-Additionally, TaskMailer requires the Ruote ruby workflow engine (OpenFEru) in
-order to schedule email dispatch times.  To set up Ruote, gem install ruote or
-visit http://openwferu.rubyforge.org/quickstart.html for more information.
+You will also need sendmail installed on the machine running the script. Please
+refer to your distro documentation or Google for installing sendmail.
 
 Finally, TaskMailer uses Psych to read YAML configuration files.
 gem install psych will install Psych, though it may require the libyaml-dev 
