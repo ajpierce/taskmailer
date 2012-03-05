@@ -14,9 +14,6 @@ and configure an instance of TaskWarrior.
 In order to send out emails, TaskMailer requires Pony.  gem install pony or
 visit https://github.com/benprew/pony for more information.
 
-You will also need sendmail installed on the machine running the script. Please
-refer to your distro documentation or Google for installing sendmail.
-
 Finally, TaskMailer uses Psych to read YAML configuration files.
 gem install psych will install Psych, though it may require the libyaml-dev 
 library to be installed on your system.
