@@ -14,29 +14,27 @@ class TaskMailer
   end
 
   def email 
-    JOBS.each do |job|
-      job_name = job.first
-      job_data = job.last
-      body = get_email_contents(job_data)
-      send_email(job_data, body)
+    JOBS.each do |title, job|
+      body = get_email_contents(job)
+      send_email(job, body)
     end
   end
 
   private
 
-  def get_email_contents(job_data)
+  def get_email_contents(job)
       output = Array.new
-      job_data[:projects].each do |project|
+      job[:projects].each do |project|
         output.push( invoke_tw(project) )
       end
       return output
   end
 
-  def send_email(job_data, body)
+  def send_email(job, body)
     Pony.mail(
-      :to => job_data[:email],
-      :from => job_data[:from],
-      :subject => job_data[:subject], 
+      :to => job[:email],
+      :from => job[:from],
+      :subject => job[:subject], 
       :body => body,
       :via => :smtp,
       :via_options => {
